@@ -9,7 +9,7 @@ export const meta: V2_MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center text-5xl font-bold text-primary">
+    <div className="flex flex-col min-h-[85vh] items-center justify-center text-5xl font-bold text-primary">
       Elihphile
     </div>
   );
