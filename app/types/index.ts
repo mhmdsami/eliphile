@@ -1,6 +1,6 @@
 export type User = {
   id: string;
-  createdAt: Date;
+  createdAt: string;
   username: string;
   passwordHash: string;
   images: Image[];
@@ -8,7 +8,7 @@ export type User = {
 
 export type Image = {
   id: string;
-  createdAt: Date;
+  createdAt: string;
   url: string;
   title: string;
   description: string;
