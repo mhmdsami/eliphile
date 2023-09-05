@@ -1,4 +1,4 @@
-import DisplayImages from "~/components/DisplayImages";
+import DisplayImageDetails from "~/components/DisplayImageDetails";
 import { requireUserId } from "~/utils/session.server";
 import { db } from "~/utils/db.server";
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
@@ -22,7 +22,7 @@ export default function Dashboard() {
     <div className="flex flex-col items-center justify-around min-h-[85vh]">
       <Outlet />
       {images.length > 0 ? (
-        <DisplayImages images={images} />
+        <DisplayImageDetails images={images} />
       ) : (
         <div className="flex items-center">
           You haven't uploaded any images yet,&nbsp;
