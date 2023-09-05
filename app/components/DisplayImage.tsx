@@ -1,4 +1,5 @@
 import { ClipboardCopy, Eye } from "lucide-react";
+import toast from "~/utils/toast.client";
 import type { Image as ImageType } from "~/types";
 
 interface DisplayImageProps extends ImageType {}
@@ -17,7 +18,10 @@ export default function DisplayImage({ url, title, description, views }: Display
           <ClipboardCopy
             width={20}
             className="cursor-pointer"
-            onClick={async () => await navigator.clipboard.writeText(url)}
+            onClick={async () => {
+              await navigator.clipboard.writeText(url)
+              toast.show("Copied to clipboard!", "🚀")
+            }}
           />
         </div>
         <div className="btn flex gap-2">

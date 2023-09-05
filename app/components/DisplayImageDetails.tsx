@@ -1,5 +1,6 @@
 import { ClipboardCopy } from "lucide-react";
 import type { Image as ImageType } from "~/types";
+import toast from "~/utils/toast.client";
 
 interface DisplayImageDetailsProps {
   images: ImageType[];
@@ -29,7 +30,10 @@ export default function DisplayImageDetails({
             <ClipboardCopy
               className="hover:text-primary cursor-pointer"
               width={16}
-              onClick={async () => await navigator.clipboard.writeText(url)}
+              onClick={async () => {
+                await navigator.clipboard.writeText(url);
+                toast.show("Copied to clipboard!", "🚀");
+              }}
             />
           </div>
         </div>

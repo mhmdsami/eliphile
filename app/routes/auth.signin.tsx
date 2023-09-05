@@ -1,6 +1,8 @@
 import { Form, Link, useActionData } from "@remix-run/react";
 import { json, redirect } from "@remix-run/node";
 import { createUserSession, getUserId, signIn } from "~/utils/session.server";
+import { useEffect } from "react";
+import toast from "~/utils/toast.client";
 import type {
   LoaderFunction,
   ActionFunction,
@@ -89,6 +91,12 @@ export const action: ActionFunction = async ({ request }) => {
 export default function SignIn() {
   const data = useActionData<ActionData | undefined>();
 
+  useEffect(() => {
+    if (data?.errors) {
+      if (data.errors.formErrors) toast.error(data.errors.formErrors[0]);
+    }
+  }, [data]);
+
   return (
     <>
       <h1 className="text-3xl font-bold">Welcome Back</h1>
@@ -104,9 +112,6 @@ export default function SignIn() {
             className="text-field w-56"
           />
         </div>
-        <p className="text-xs text-red-400">
-          {data?.errors?.fieldErrors.username}
-        </p>
         <div className="flex flex-col gap-2">
           <input
             name="password"
@@ -115,10 +120,6 @@ export default function SignIn() {
             className="text-field w-56"
           />
         </div>
-        <p className="text-xs text-red-400">
-          {data?.errors?.fieldErrors.password}
-        </p>
-        <p className="text-xs text-red-400">{data?.errors?.formErrors}</p>
         <Link className="text-sm hover:underline" to="/auth/signup">
           I don't have an account yet.
         </Link>

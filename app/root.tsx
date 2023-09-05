@@ -12,6 +12,7 @@ import {
 import { json } from "@remix-run/node";
 import { getUser } from "~/utils/session.server";
 import type { LinksFunction, LoaderFunction } from "@remix-run/node";
+import {Toaster} from "react-hot-toast";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },
@@ -37,6 +38,7 @@ export default function App() {
       </head>
       <body>
         <Navbar user={user} />
+        <Toaster position="top-right" />
         <Outlet />
         <ScrollRestoration />
         <Scripts />

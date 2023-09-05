@@ -8,6 +8,8 @@ import type {
   V2_MetaFunction,
 } from "@remix-run/node";
 import type { SignUpError } from "~/utils/schema";
+import { useEffect } from "react";
+import toast from "~/utils/toast.client";
 
 export const meta: V2_MetaFunction = () => [
   { title: "Eliphile | Sign Up" },
@@ -54,6 +56,21 @@ export const action: ActionFunction = async ({ request }) => {
 export default function SignUp() {
   const data = useActionData<ActionData | undefined>();
 
+  useEffect(() => {
+    if (data?.errors) {
+      if (data.errors.fieldErrors.username) {
+        toast.error(data.errors.fieldErrors.username[0]);
+        return;
+      } else if (data.errors.fieldErrors.password) {
+        toast.error(data.errors.fieldErrors.password[0]);
+        return;
+      } else if (data.errors.formErrors) {
+        toast.error(data.errors.formErrors[0]);
+        return;
+      }
+    }
+  }, [data]);
+
   return (
     <>
       <h1 className="text-3xl font-bold">Get Started!</h1>
@@ -68,9 +85,6 @@ export default function SignUp() {
             placeholder="username"
             className="text-field w-56"
           />
-          <p className="text-xs text-red-400">
-            {data?.errors?.fieldErrors.username}
-          </p>
         </div>
         <div className="flex flex-col gap-2">
           <input
@@ -79,11 +93,7 @@ export default function SignUp() {
             placeholder="password"
             className="text-field w-56"
           />
-          <p className="text-xs text-red-400">
-            {data?.errors?.fieldErrors.password}
-          </p>
         </div>
-        <p className="text-xs text-red-400">{data?.errors?.formErrors}</p>
         <Link className="text-sm hover:underline" to="/auth/signin">
           I have an account already!
         </Link>
