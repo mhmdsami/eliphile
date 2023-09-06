@@ -6,14 +6,14 @@ interface DisplayImageProps extends ImageType {}
 
 export default function DisplayImage({ url, title, description, views }: DisplayImageProps) {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center w-[90vw] md:w-[30vw]">
       <img
         src={url}
         alt={description}
-        className="w-[40vw] h-[45vh] object-cover"
+        className="aspect-video object-cover rounded-lg"
         title={`${title}: ${description}`}
       />
-      <div className="flex justify-between w-[40vw] mt-5">
+      <div className="flex w-full justify-between mt-3">
         <div className="btn">
           <ClipboardCopy
             width={20}

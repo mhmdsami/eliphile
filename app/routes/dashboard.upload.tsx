@@ -95,17 +95,17 @@ export default function Upload() {
       <Form
         method="POST"
         encType="multipart/form-data"
-        className="flex gap-2"
+        className="flex flex-col xl:flex-row gap-2 mx-auto"
         ref={formRef}
       >
-        <div {...getRootProps()} className="flex text-field w-96">
+        <div {...getRootProps()} className="flex text-field w-72 md:w-96">
           <input
             {...getInputProps({
               accept: "image/*",
               multiple: false,
             })}
           />
-          <div className="text-sm text-white/60 flex flex-col flex-grow gap-2 items-center justify-center text-center">
+          <div className="text-sm text-white/60 flex flex-col flex-grow gap-2 items-center justify-center text-center min-h-[128px]">
             {acceptedFiles.length > 0 ? (
               <>
                 <Image />
@@ -127,7 +127,7 @@ export default function Upload() {
         </div>
         <input name="image" value={image} hidden readOnly />
         <div className="flex flex-col gap-2">
-          <div className="flex gap-2 w-96">
+          <div className="flex gap-2 w-72 md:w-96">
             <input
               name="title"
               type="text"

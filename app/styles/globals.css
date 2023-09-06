@@ -9,7 +9,7 @@ body {
 }
 
 .btn {
-  @apply bg-primary px-4 py-1 rounded-md w-fit text-black font-semibold;
+  @apply bg-primary px-2 py-0.5 md:px-4 md:py-1 rounded-md w-fit text-black font-semibold;
 }
 
 .text-field {

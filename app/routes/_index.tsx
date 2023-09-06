@@ -40,7 +40,7 @@ export default function Index() {
   const { images } = useLoaderData<LoaderData>();
 
   return (
-    <div className="mx-20 my-8 grid grid-cols-2 items-center flex-col gap-10">
+    <div className="my-8 lg:mx-20 grid md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-10">
       {images.map((image) => (
         <div key={image.id}>
           <DisplayImage key={image.id} {...image} />
