@@ -6,7 +6,7 @@ interface DisplayImageProps extends ImageType {}
 
 export default function DisplayImage({ url, title, description, views }: DisplayImageProps) {
   return (
-    <div className="flex flex-col items-center w-[90vw] md:w-[30vw]">
+    <div className="flex flex-col items-center w-[90vw] md:w-[40vw] lg:w-[28vw]">
       <img
         src={url}
         alt={description}
@@ -14,6 +14,9 @@ export default function DisplayImage({ url, title, description, views }: Display
         title={`${title}: ${description}`}
       />
       <div className="flex w-full justify-between mt-3">
+        <div className="btn flex gap-2">
+          <Eye />{views}
+        </div>
         <div className="btn">
           <ClipboardCopy
             width={20}
@@ -23,9 +26,6 @@ export default function DisplayImage({ url, title, description, views }: Display
               toast.show("Copied to clipboard!", "🚀")
             }}
           />
-        </div>
-        <div className="btn flex gap-2">
-          <Eye />{views}
         </div>
       </div>
     </div>

@@ -18,12 +18,12 @@ type LoaderData = {
 
 export const loader: LoaderFunction = async () => {
   const imageCount = await db.image.count();
-  const skip = Math.max(0, Math.floor(Math.random() * imageCount) - 10);
+  const skip = Math.max(0, Math.floor(Math.random() * imageCount));
 
   const images = await db.image.findMany({
     orderBy: { createdAt: "desc" },
     skip,
-    take: 10,
+    take: 6,
   });
 
   for (const { id } of images) {
