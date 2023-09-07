@@ -9,8 +9,7 @@
 ![dashboard](https://github.com/mhmdsami/eliphile/assets/64266012/fd714b8e-b5f8-439a-bf6e-50f29d961861)
 
 ## Upload new images
-
-![upload](https://github.com/mhmdsami/eliphile/assets/64266012/f28889dd-485b-4441-9f62-34bcd32a879b)
+![upload](https://github.com/mhmdsami/eliphile/assets/64266012/eedf3880-2bd7-4874-9ccf-8918d8cb1816)
 
 ## Setup & Run
 
