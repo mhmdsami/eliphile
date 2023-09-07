@@ -23,7 +23,6 @@
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-hot-toast": "^2.4.1",
-    "react-responsive-masonry": "^2.1.7",
     "zod": "^3.22.2"
   },
   "devDependencies": {
@@ -32,7 +31,6 @@
     "@types/bcryptjs": "^2.4.3",
     "@types/react": "^18.0.35",
     "@types/react-dom": "^18.0.11",
-    "@types/react-responsive-masonry": "^2.1.0",
     "eslint": "^8.38.0",
     "prettier": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.4",
