@@ -1,58 +1,29 @@
-# Welcome to Remix!
+# eliphile
+## Store, share and view beautiful images!
+![eliphile](https://github.com/mhmdsami/eliphile/assets/64266012/1a34e1a8-9a8a-48a7-adef-392a3c4d7f66)
 
-- [Remix Docs](https://remix.run/docs)
+## Dashboard to manage your images
+![dashboard](https://github.com/mhmdsami/eliphile/assets/64266012/fd714b8e-b5f8-439a-bf6e-50f29d961861)
 
-## Development
+## Upload new images
+![upload](https://github.com/mhmdsami/eliphile/assets/64266012/f28889dd-485b-4441-9f62-34bcd32a879b)
 
-From your terminal:
-
-```sh
-npm run dev
+## Setup & Run
+### Install the dependencies
+```bash
+pnpm install
 ```
 
-This starts your app in development mode, rebuilding assets on file changes.
-
-## Deployment
-
-First, build your app for production:
-
-```sh
-npm run build
+### Run the development server
+```bash
+pnpm dev
 ```
 
-Then run the app in production mode:
-
-```sh
-npm start
-```
-
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `remix build`
-
-- `build/`
-- `public/build/`
-
-### Using a Template
-
-When you ran `npx create-remix@latest` there were a few choices for hosting. You can run that again to create a new project, then copy over relevant code/assets from your current app to the new project that's pre-configured for your target server.
-
-Most importantly, this means everything in the `app/` directory, but if you've further customized your current application outside of there it may also include:
-
-- Any assets you've added/updated in `public/`
-- Any updated versions of root files such as `.eslintrc.js`, etc.
-
-```sh
-cd ..
-# create a new project, and pick a pre-configured host
-npx create-remix@latest
-cd my-new-remix-app
-# remove the new project's app (not the old one!)
-rm -rf app
-# copy your app over
-cp -R ../my-old-remix-app/app app
-```
+## Tech Stack
+- [Remix](https://remix.run/)
+- [Prisma](https://www.prisma.io/)
+- [MongoDB](https://www.mongodb.com/)
+- [Cloudinary](https://cloudinary.com/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Zod](https://zod.dev/)
