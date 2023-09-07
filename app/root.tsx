@@ -12,7 +12,7 @@ import {
 import { json } from "@remix-run/node";
 import { getUser } from "~/utils/session.server";
 import type { LinksFunction, LoaderFunction } from "@remix-run/node";
-import {Toaster} from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesheet },

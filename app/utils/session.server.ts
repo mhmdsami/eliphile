@@ -3,12 +3,9 @@ import bcrypt from "bcryptjs";
 import { createCookieSessionStorage, redirect } from "@remix-run/node";
 import { db } from "~/utils/db.server";
 
-export async function signUp(
-  username: string,
-  password: string,
-) {
+export async function signUp(username: string, password: string) {
   let user = await db.user.findFirst({
-    where: { username } ,
+    where: { username },
   });
   if (user) return null;
 

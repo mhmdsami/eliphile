@@ -4,7 +4,12 @@ import type { Image as ImageType } from "~/types";
 
 interface DisplayImageProps extends ImageType {}
 
-export default function DisplayImage({ url, title, description, views }: DisplayImageProps) {
+export default function DisplayImage({
+  url,
+  title,
+  description,
+  views,
+}: DisplayImageProps) {
   return (
     <div className="flex flex-col items-center w-[90vw] md:w-[40vw] lg:w-[28vw]">
       <img
@@ -15,15 +20,16 @@ export default function DisplayImage({ url, title, description, views }: Display
       />
       <div className="flex w-full justify-between mt-3">
         <div className="btn flex gap-2">
-          <Eye />{views}
+          <Eye />
+          {views}
         </div>
         <div className="btn">
           <ClipboardCopy
             width={20}
             className="cursor-pointer"
             onClick={async () => {
-              await navigator.clipboard.writeText(url)
-              toast.show("Copied to clipboard!", "🚀")
+              await navigator.clipboard.writeText(url);
+              toast.show("Copied to clipboard!", "🚀");
             }}
           />
         </div>

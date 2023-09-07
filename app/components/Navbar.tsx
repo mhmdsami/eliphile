@@ -40,7 +40,10 @@ const Navbar = ({ user }: NavbarProps) => {
 
   return (
     <nav className="flex justify-between items-center px-4 mt-5 md:px-10 md:mt-7 lg:px-20 lg:mt-10">
-      <Link to="/" className="text-xl md:text-2xl lg:text-4xl text-primary font-bold">
+      <Link
+        to="/"
+        className="text-xl md:text-2xl lg:text-4xl text-primary font-bold"
+      >
         Eliphile
       </Link>
       {user ? (

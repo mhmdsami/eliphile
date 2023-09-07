@@ -93,7 +93,8 @@ export default function SignIn() {
 
   useEffect(() => {
     if (data?.errors) {
-      if (data.errors.formErrors.length > 0) toast.error(data.errors.formErrors[0]);
+      if (data.errors.formErrors.length > 0)
+        toast.error(data.errors.formErrors[0]);
     }
   }, [data]);
 

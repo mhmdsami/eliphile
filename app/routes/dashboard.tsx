@@ -19,14 +19,17 @@ export default function Dashboard() {
   const { images } = useLoaderData();
 
   return (
-    <div className="flex flex-col items-center justify-around min-h-[85vh]">
+    <div className="flex flex-col gap-10 items-center justify-around min-h-[85vh]">
       <Outlet />
       {images.length > 0 ? (
         <DisplayImageDetails images={images} />
       ) : (
         <div className="flex items-center">
           You haven't uploaded any images yet,&nbsp;
-          <Link to="/dashboard/upload" className="text-primary">upload</Link>&nbsp;one now!
+          <Link to="/dashboard/upload" className="text-primary">
+            upload
+          </Link>
+          &nbsp;one now!
         </div>
       )}
     </div>

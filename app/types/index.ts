@@ -4,7 +4,7 @@ export type User = {
   username: string;
   passwordHash: string;
   images: Image[];
-}
+};
 
 export type Image = {
   id: string;
@@ -13,4 +13,4 @@ export type Image = {
   title: string;
   description: string;
   views: number;
-}
+};
