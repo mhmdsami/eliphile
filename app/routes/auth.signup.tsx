@@ -58,14 +58,16 @@ export default function SignUp() {
 
   useEffect(() => {
     if (data?.errors) {
+      if (data.errors.formErrors.length > 0) {
+        toast.error(data.errors.formErrors[0]);
+        return;
+      }
       if (data.errors.fieldErrors.username) {
         toast.error(data.errors.fieldErrors.username[0]);
         return;
-      } else if (data.errors.fieldErrors.password) {
+      }
+      if (data.errors.fieldErrors.password) {
         toast.error(data.errors.fieldErrors.password[0]);
-        return;
-      } else if (data.errors.formErrors) {
-        toast.error(data.errors.formErrors[0]);
         return;
       }
     }
