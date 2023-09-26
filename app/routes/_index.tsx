@@ -23,7 +23,7 @@ export const loader: LoaderFunction = async () => {
   const images = await db.image.findMany({
     orderBy: { createdAt: "desc" },
     skip,
-    take: 6,
+    take: 9,
   });
 
   for (const { id } of images) {

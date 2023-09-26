@@ -17,6 +17,9 @@ export default function DisplayImage({
         alt={description}
         className="aspect-video object-cover rounded-lg"
         title={`${title}: ${description}`}
+        height={500}
+        width={600}
+        loading="eager"
       />
       <div className="flex w-full justify-between mt-3">
         <div className="btn flex gap-2">
